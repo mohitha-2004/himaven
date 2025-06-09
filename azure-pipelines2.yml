@@ -1,0 +1,11 @@
+trigger:
+  - master
+pool:
+  name:Default
+steps:
+  - script: echo 'hello'
+    displayName: 'run echo command'
+  - script: mvn clean install
+    displayName: 'run build'
+  - script: java -jar target/m-0.0.1-SNAPSHOT.jar
+    displayName: 'run jar file'
